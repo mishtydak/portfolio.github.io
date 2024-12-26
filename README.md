@@ -21,7 +21,7 @@ I am passionate about technology and problem-solving. Here's a glimpse of my wor
 <dt>Course Name</dt>
 <dd>Algorithmic Problem Solving</dd>
 <dt>Course Code</dt>
-<dd>Course Code Placeholder</dd>
+<dd>24ECAC203</dd>
 <dt>Name</dt>
 <dd>MISHTY DAK</dd>
 <dt>SRN</dt>
@@ -35,5 +35,3 @@ I am passionate about technology and problem-solving. Here's a glimpse of my wor
 </dl>
 
 <br> 
-> “The only way to do great work is to love what you do.” – Steve Jobs
->
