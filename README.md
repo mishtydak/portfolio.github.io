@@ -1,6 +1,5 @@
 # portfolio.github.io
 ## Portfolio
-[COURSE REFLECTION](DAA_REFLECTION)
 ### Hello, I'm MISHTY DAK👋
 
 I am passionate about technology and problem-solving. Here's a glimpse of my work:
