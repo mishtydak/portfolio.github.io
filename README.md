@@ -27,7 +27,7 @@ I am passionate about technology and problem-solving. Here's a glimpse of my wor
 <dt>SRN</dt>
 <dd>01FE23BCI006</dd>
 <dt>Course Instructor</dt>
-<dd>KKM Rajashekharaiah</dd>
+<dd>K M M Rajashekharaiah</dd>
 <dt>University</dt>
 <dd>KLE TECHNOLOGICAL UNIVERSITY</dd>
 <dt>Portfolio Topic/Domain</dt>
