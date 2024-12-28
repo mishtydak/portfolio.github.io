@@ -1,22 +1,21 @@
 README1.md
 ## Portfolio
 
-### Hello, I'm [Your Name] 👋
+### Hello, I'm Mishty Dak👋
 
 I am passionate about technology and problem-solving. Here's a glimpse of my work:
 
 ## 🛠️ Projects
-- **Project 1**: A short description of your project.
-- **Project 2**: A short description of another project.
+- **Project 1**: Design thinking for social innovation-Agriculture sector.
+- **Project 2**: Engineering Exploration-Smart window.
 
 ## 🚀 Skills
-- C++, Python, JavaScript
+- C++, C,HTML
 - Data Structures and Algorithms
-- Web Development (React.js, Node.js)
 
 ## 🌐 Find Me Online
-- [GitHub](https://github.com/your-github-username)
-- [LinkedIn](https://linkedin.com/in/your-linkedin-profile)
+- [GitHub](https://github.com/mishtydak)
+- [LinkedIn](https://linkedin.com/in/mishtydak)
 
 ## Portfolio Topic
 
@@ -24,19 +23,17 @@ I am passionate about technology and problem-solving. Here's a glimpse of my wor
 <dt>Course Name</dt>
 <dd>Algorithmic Problem Solving</dd>
 <dt>Course Code</dt>
-<dd>Course Code Placeholder</dd>
+<dd>24ECAC203</dd>
 <dt>Name</dt>
-<dd>Your Name</dd>
+<dd>Mishty Dak</dd>
 <dt>SRN</dt>
-<dd>Your SRN</dd>
+<dd>01FE23BCI006</dd>
 <dt>Course Instructor</dt>
-<dd>Instructor Name Placeholder</dd>
+<dd>K M M Rajashekharaiah</dd>
 <dt>University</dt>
-<dd>Your University Name</dd>
-<dt>Portfolio Topic/Domain</dt>
-<dd>Google</dd>
+<dd>KLE TECHNOLOGICAL UNIVERSITY</dd>
+<dt>Portfolio Topic/Domai</dt>
+<dd>DATA ANALYSIS AND ALGORITHMS</dd>
 </dl>
 
 <br> 
-> “The only way to do great work is to love what you do.” – Steve Jobs
->
