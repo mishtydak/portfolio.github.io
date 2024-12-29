@@ -1,8 +1,6 @@
 [blahh](./waste.html)
 
-
-
-
+![image](https://github.com/user-attachments/assets/b2bf3de3-26fe-4907-b0d3-d957306282ba)
 
 # DAA_
 
