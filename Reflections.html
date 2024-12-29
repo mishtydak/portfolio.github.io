@@ -13,7 +13,11 @@
             table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: #333333; color: white; } 
             table, th, td { border: 1px solid #800020; } 
             th, td { padding: 10px; text-align: left; } th { background-color: #800020; }
-            .gif img { max-width: 50%; height: auto; }
+            img {
+            width: 300px;  /* Set desired width */
+            height: 200px; /* Set desired height */
+            object-fit: cover; /* Ensures images and GIFs fill the size while maintaining aspect ratio */
+        }
         </style> 
     </head>
 <body>
