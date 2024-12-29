@@ -8,7 +8,7 @@ I am passionate about technology and problem-solving. Here's a glimpse of my wor
 - **Project 2**: Engineering Exploration-Smart window.
 
 ## 🚀 Skills
-- C++, C,HTML
+- C++, C, HTML
 - Data Structures and Algorithms
 
 ## 🌐 Find Me Online
@@ -29,12 +29,21 @@ I am passionate about technology and problem-solving. Here's a glimpse of my wor
 <dd>K M M Rajashekharaiah</dd>
 <dt>University</dt>
 <dd>KLE TECHNOLOGICAL UNIVERSITY</dd>
-<dt>Portfolio Topic/Domai</dt>
+<dt>Portfolio Topic/Domain</dt>
 <dd>DATA ANALYSIS AND ALGORITHMS</dd>
 </dl>
 
-<br> 
+<br>
+
+## Navigation
+- [Home](#data-analysis-and-algorithms)
+- [Course Reflection](./Reflections.md)
+- [Lab Reflection](./questions.md)
+
+### Home
+Welcome to my portfolio. I am excited to share my projects and learnings with you. Feel free to explore the different sections using the navigation links above.
 
 ### AND HERE ARE MY COURSE REFLECTIONS
 
 - [Course Reflection](./Reflections.md)
+- [Lab Reflections](./questions.md)
