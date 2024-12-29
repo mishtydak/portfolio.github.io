@@ -1,7 +1,5 @@
-# DAA_
+# Data analysis and algorithms
 
-## Hello! Welcome to our city.
-
-Let me help you go through the content.
-- ![Introduction](./README1.md)
+## 
+AND HERE ARE MY COURSE REFLECTIONS
 - [Course Reflection](./Reflections.md)
