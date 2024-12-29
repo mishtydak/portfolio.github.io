@@ -118,6 +118,7 @@ Problems in nature can be solved using iteration, recursion, or backtracking. It
 
 
 ## 2. What is space and time efficiency? Why are they important?
+
 | Order      | Description                        | Example                           |
 |------------|------------------------------------|-----------------------------------|
 | O(1)       | Constant time                     | Accessing an element in an array |
@@ -126,6 +127,7 @@ Problems in nature can be solved using iteration, recursion, or backtracking. It
 | O(n log n) | Log-linear time                   | Sorting algorithms like MergeSort |
 | O(n²)      | Quadratic time                    | Bubble Sort                      |
 | O(2ⁿ)      | Exponential time                  | Solving the Tower of Hanoi       |
+
 
 Space efficiency is about how much memory an algorithm uses, and time efficiency is about how fast it runs. These are important because they help us choose algorithms that can handle large tasks without using too much memory or taking too long. For example, algorithms that take constant time (O(1)) or logarithmic time (O(log n)) are very fast. However, those with quadratic (O(n²)) or exponential time (O(2ⁿ)) can be too slow for large problems. Choosing efficient algorithms is crucial in real-world tasks like processing data or running programs smoothly.
 
