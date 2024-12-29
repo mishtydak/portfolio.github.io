@@ -1,8 +1,7 @@
-# Jekflix Template
+# DAA COURSE PROJECT
 
-![Jekflix Template Cover Image](https://res.cloudinary.com/dm7h7e8xj/image/upload/v1505354182/jekflix-logo_mfngps.png)
+![Image](https://i.pinimg.com/736x/e2/b6/00/e2b6000af9ab51b75ff7599904bf7bc8.jpg)
 
-See the [demo here](https://jekflix.rossener.com/).
 
 ## What is it?
 
