@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Learning Reflections</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0 20px;
+            background-color: #f4f4f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        code {
+            background-color: #eef;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        table th {
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: left;
+        }
+        img, iframe {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Course Learning Reflections</h1>
+
+<h2>1. Problems in Nature: Iteration, Recursion, Backtracking</h2>
+<img src="https://skilled.dev/images/natural-recursion.jpg" alt="Recursion in Nature">
+<p>Problems in nature can be solved using iteration, recursion, or backtracking. Iteration involves repeating steps, like counting animal populations or watching seasonal changes. Recursion solves problems by breaking them into smaller parts, such as the patterns of tree branches or fractals in snowflakes. Backtracking explores all possible options and returns to try a different path if needed, like ants searching for food or animals solving mazes.</p>
+
+<h3>Iteration Example: Factorial Calculation</h3>
+<pre><code>long long factorial (int n)
+{
+    long long result = 1;
+    for (int i = 1; i <= n; ++i) {
+        result *= i;
+    }
+    return result;
+}
+</code></pre>
+
+<h3>Recursion Example: Fibonacci Series</h3>
+<pre><code>int fibonacci(int n)
+{
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+</code></pre>
+
+<h3>Recursion Example: Tower of Hanoi</h3>
+<pre><code>#include &lt;stdio.h&gt;
+void towers(int n, char from, char to, char aux)
+{
+    if (n == 1)
+    {
+        printf("Move disk 1 from %c to %c\n", from, to);
+        return;
+    }
+    towers(n - 1, from, aux, to);
+    printf("Move disk %d from %c to %c\n", n, from, to);
+    towers(n - 1, aux, to, from);
+}
+
+int main() 
+{
+    int n;
+    printf("Enter the number of Disks to be moved\n");
+    scanf("%d", &n);
+    towers(n, 'A', 'C', 'B');
+    return 0;
+}
+</code></pre>
+
+<h3>Backtracking Example: N-Queens Problem</h3>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+bool isSafe(int board[][10], int row, int col, int N)
+{
+    for (int i = 0; i < row; i++) {
+        if (board[i][col] == 1 || 
+            (col - (row - i) >= 0 && board[i][col - (row - i)] == 1) || 
+            (col + (row - i) < N && board[i][col + (row - i)] == 1)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool solveNQueens(int board[][10], int row, int N) {
+    if (row == N) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                cout &lt;&lt; (board[i][j] ? "Q " : ". ");
+            }
+            cout &lt;&lt; endl;
+        }
+        cout &lt;&lt; endl;
+        return true;
+    }
+    bool res = false;
+    for (int col = 0; col < N; col++) {
+        if (isSafe(board, row, col, N)) {
+            board[row][col] = 1;
+            res = solveNQueens(board, row + 1, N) || res;
+            board[row][col] = 0;
+        }
+    }
+    return res;
+}
+
+void solveNQueens(int N)
+{
+    int board[10][10] = {0};
+    if (!solveNQueens(board, 0, N)) {
+        cout &lt;&lt; "Solution does not exist!" &lt;&lt; endl;
+    }
+}
+
+int main() {
+    int N;
+    cout &lt;&lt; "Enter the value of N: ";
+    cin &gt;&gt; N;
+    solveNQueens(N);
+    return 0;
+}
+</code></pre>
+
+<h2>2. What is space and time efficiency? Why are they important?</h2>
+<table>
+    <tr>
+        <th>Order</th>
+        <th>Description</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>O(1)</td>
+        <td>Constant time</td>
+        <td>Accessing an element in an array</td>
+    </tr>
+    <tr>
+        <td>O(log n)</td>
+        <td>Logarithmic time</td>
+        <td>Binary search</td>
+    </tr>
+    <tr>
+        <td>O(n)</td>
+        <td>Linear time</td>
+        <td>Linear search</td>
+    </tr>
+    <tr>
+        <td>O(n log n)</td>
+        <td>Log-linear time</td>
+        <td>Sorting algorithms like MergeSort</td>
+    </tr>
+    <tr>
+        <td>O(n²)</td>
+        <td>Quadratic time</td>
+        <td>Bubble Sort</td>
+    </tr>
+    <tr>
+        <td>O(2ⁿ)</td>
+        <td>Exponential time</td>
+        <td>Solving the Tower of Hanoi</td>
+    </tr>
+</table>
+<p>Space efficiency is about how much memory an algorithm uses, and time efficiency is about how fast it runs. These are important because they help us choose algorithms that can handle large tasks without using too much memory or taking too long. For example, algorithms that take constant time (O(1)) or logarithmic time (O(log n)) are very fast. However, those with quadratic (O(n²)) or exponential time (O(2ⁿ)) can be too slow for large problems. Choosing efficient algorithms is crucial in real-world tasks like processing data or running programs smoothly.</p>
+
+<!-- Content continues similarly for the other sections -->
+
+</body>
+</html>
