@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Distribution System for Jaipur</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #000;
+            padding: 15px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            background: linear-gradient(to bottom, #1b1b1b, #121212);
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #121212;
+            background: #f1f1f1;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 80px auto 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background: #1b1b1b;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: monospace;
+            color: #dcdcdc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="#">Home</a>
+            <a href="#about">About Project</a>
+            <a href="#team">Team Details</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Water Distribution System for Jaipur</h1>
+        <p>Optimizing water distribution to neighborhoods in Jaipur using advanced data structures and algorithms.</p>
+    </div>
+
+    <section>
+        <h2>Objectives</h2>
+        <ul>
+            <li>Model neighborhoods and pipelines in Jaipur as a weighted directed graph.</li>
+            <li>Use Minimum Spanning Tree (MST) to minimize pipeline installation costs.</li>
+            <li>Identify the shortest paths for water distribution using Dijkstra's algorithm.</li>
+        </ul>
+
+        <h2>Implementation</h2>
+        <pre>
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <climits>
+
+using namespace std;
+
+class Graph {
+public:
+    int vertices;
+    vector<vector<pair<int, int>>> adjList;
+
+    Graph(int v) : vertices(v) {
+        adjList.resize(v);
+    }
+
+    void addEdge(int u, int v, int weight) {
+        adjList[u].emplace_back(v, weight);
+        adjList[v].emplace_back(u, weight); // For undirected graph
+    }
+
+    void dijkstra(int src) {
+        vector<int> dist(vertices, INT_MAX);
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
+
+        dist[src] = 0;
+        pq.emplace(0, src);
+
+        while (!pq.empty()) {
+            int u = pq.top().second;
+            pq.pop();
+
+            for (auto &[v, weight] : adjList[u]) {
+                if (dist[u] + weight < dist[v]) {
+                    dist[v] = dist[u] + weight;
+                    pq.emplace(dist[v], v);
+                }
+            }
+        }
+
+        cout << "Shortest Paths from Source " << src << ":\n";
+        for (int i = 0; i < vertices; ++i)
+            cout << "To " << i << ": " << dist[i] << "\n";
+    }
+
+    void primMST() {
+        vector<int> key(vertices, INT_MAX);
+        vector<bool> inMST(vertices, false);
+        vector<int> parent(vertices, -1);
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
+
+        key[0] = 0;
+        pq.emplace(0, 0);
+
+        while (!pq.empty()) {
+            int u = pq.top().second;
+            pq.pop();
+
+            inMST[u] = true;
+
+            for (auto &[v, weight] : adjList[u]) {
+                if (!inMST[v] && weight < key[v]) {
+                    key[v] = weight;
+                    pq.emplace(key[v], v);
+                    parent[v] = u;
+                }
+            }
+        }
+
+        cout << "Minimum Spanning Tree:\n";
+        for (int i = 1; i < vertices; ++i)
+            cout << parent[i] << " - " << i << "\n";
+    }
+};
+
+int main() {
+    int vertices = 6; // Example for 6 neighborhoods
+    Graph g(vertices);
+
+    // Example: Adding edges between neighborhoods (u, v, weight)
+    g.addEdge(0, 1, 4);
+    g.addEdge(0, 2, 4);
+    g.addEdge(1, 2, 2);
+    g.addEdge(1, 3, 5);
+    g.addEdge(2, 3, 8);
+    g.addEdge(3, 4, 6);
+    g.addEdge(4, 5, 9);
+
+    g.dijkstra(0); // Shortest paths from source neighborhood 0
+
+    g.primMST();  // Minimum spanning tree
+
+    return 0;
+}
+        </pre>
+
+        <h2>Neighborhoods</h2>
+        <p>The neighborhoods modeled in this project include Malviya Nagar, Mansarovar, Vaishali Nagar, C-Scheme, Jhotwara, and Jagatpura, among others. Connections represent pipelines, and weights represent distances or costs of installation.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Jaipur Water Distribution System | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
