@@ -35,15 +35,7 @@ I am passionate about technology and problem-solving. Here's a glimpse of my wor
 
 <br>
 
-## Navigation
-- [Home](#data-analysis-and-algorithms)
+## here are my outcomes:-
 - [Course Reflection](./Reflections.md)
 - [Lab Reflection](./questions.md)
 
-### Home
-Welcome to my portfolio. I am excited to share my projects and learnings with you. Feel free to explore the different sections using the navigation links above.
-
-### AND HERE ARE MY COURSE REFLECTIONS
-
-- [Course Reflection](./Reflections.md)
-- [Lab Reflections](./questions.md)
