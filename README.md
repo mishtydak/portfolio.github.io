@@ -23,6 +23,7 @@ Let me help you go through the content.
 1. Kinds of Problems in Nature
 
 ## Iteration Example: Factorial Calculation
+
 long long factorial(int n) {
     long long result = 1;
     for (int i = 1; i <= n; ++i) {
@@ -32,6 +33,7 @@ long long factorial(int n) {
 }
 
 ## Recursion Example: Fibonacci Series
+
 int fibonacci(int n) {
     if (n <= 1) {
         return n;
@@ -40,6 +42,7 @@ int fibonacci(int n) {
 }
 
 ## Recursion Example: Tower of Hanoi
+
 #include <stdio.h>
 void towers(int n, char from, char to, char aux) {
     if (n == 1) {
@@ -60,6 +63,7 @@ int main() {
 }
 
 ## Backtracking Example: N-Queens Problem
+
 #include <iostream>
 using namespace std;
 
