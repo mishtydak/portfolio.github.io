@@ -46,3 +46,4 @@ Applying knowledge from one context to solve problems in another can be highly b
 When tackling new challenges, innovative approaches may be necessary, but tried-and-tested methods provide stability for well-understood problems. Balancing innovation and stability is crucial in real-world applications.
 
 ---
+-[home](./README.md)
