@@ -1,11 +1,12 @@
-# Data analysis and algorithms
-### Hello, I'm Mishty Dak👋
+# Mishty Dak's Portfolio
+
+## Welcome to My Portfolio! 👋
 
 I am passionate about technology and problem-solving. Here's a glimpse of my work:
 
 ## 🛠️ Projects
-- **Project 1**: Design thinking for social innovation-Agriculture sector.
-- **Project 2**: Engineering Exploration-Smart window.
+- **Project 1**: Design thinking for social innovation - Agriculture sector.
+- **Project 2**: Engineering Exploration - Smart window.
 
 ## 🚀 Skills
 - C++, C, HTML
@@ -33,9 +34,35 @@ I am passionate about technology and problem-solving. Here's a glimpse of my wor
 <dd>DATA ANALYSIS AND ALGORITHMS</dd>
 </dl>
 
-<br>
-
-## here are my outcomes:-
+## Navigation
+- [Home](html/index.html)
 - [Course Reflection](./Reflections.md)
 - [Lab Reflection](./questions.md)
 
+## Overview
+This repository contains my portfolio website, showcasing my projects and skills in data analysis and algorithms. 
+
+### Project Structure:
+- **HTML Files**: Located in the `html/` directory.
+- **CSS Files**: Located in the `css/` directory.
+
+### Usage:
+1. Clone this repository:
+    ```sh
+    git clone https://github.com/your-username/portfolio.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd portfolio
+    ```
+3. Open `html/index.html` in your browser to view the portfolio website.
+
+### Course Reflections
+- [Course Reflection](./Reflections.md)
+- [Lab Reflections](./questions.md)
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+Special thanks to my course instructor K M M Rajashekharaiah and KLE TECHNOLOGICAL UNIVERSITY for their support and guidance.
