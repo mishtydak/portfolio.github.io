@@ -25,125 +25,7 @@
 <header>
     <h1>Course Learning Reflections</h1>
 </header>
-
-<section>
-    <h2>1. Problems in Nature: Iteration, Recursion, Backtracking</h2>
-    <div class="gif">
-        <img src="https://skilled.dev/images/natural-recursion.jpg" alt="Natural Recursion Image">
-    </div>
-    <p style="color: white;">
-        Problems in nature can be solved using iteration, recursion, or backtracking. Iteration involves repeating steps, like counting animal populations or watching seasonal changes. Recursion solves problems by breaking them into smaller parts, such as the patterns of tree branches or fractals in snowflakes. Backtracking explores all possible options and returns to try a different path if needed, like ants searching for food or animals solving mazes.
-    </p>
-
-    <h3>Iteration Example: Factorial Calculation</h3>
-    <pre>
-<code>
-    long long factorial(int n) {
-        long long result = 1;
-        for (int i = 1; i <= n; ++i) {
-            result *= i;
-        }
-        return result;
-    }
-</code>
-    </pre>
-
-    <h3>Recursion Example: Fibonacci Series</h3>
-    <pre>
-<code>
-    int fibonacci(int n) {
-        if (n <= 1) {
-            return n;
-        }
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
-</code>
-    </pre>
-
-    <h3>Recursion Example: Tower of Hanoi</h3>
-    <pre>
-<code>
-    #include <stdio.h>
-    void towers(int n, char from, char to, char aux) {
-        if (n == 1) {
-            printf("Move disk 1 from %c to %c\n", from, to);
-            return;
-        }
-        towers(n - 1, from, aux, to);
-        printf("Move disk %d from %c to %c\n", n, from, to);
-        towers(n - 1, aux, to, from);
-    }
-
-    int main() {
-        int n;
-        printf("Enter the number of Disks to be moved\n");
-        scanf("%d", &n);
-        towers(n, 'A', 'C', 'B');
-        return 0;
-    }
-</code>
-    </pre>
-
-    <h3>Backtracking Example: N-Queens Problem</h3>
-    <pre>
-<code>
-    #include <iostream>
-    using namespace std;
-
-    bool isSafe(int board[][10], int row, int col, int N) {
-        for (int i = 0; i < row; i++) {
-            if (board[i][col] == 1 || 
-                (col - (row - i) >= 0 && board[i][col - (row - i)] == 1) || 
-                (col + (row - i) < N && board[i][col + (row - i)] == 1)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    bool solveNQueens(int board[][10], int row, int N) {
-        if (row == N) {
-            for (int i = 0; i < N; i++) {
-                for (int j = 0; j < N; j++) {
-                    cout << (board[i][j] ? "Q " : ". ");
-                }
-                cout << endl;
-            }
-            cout << endl;
-            return true;
-        }
-        
-        bool res = false;
-        for (int col = 0; col < N; col++) {
-            if (isSafe(board, row, col, N)) {
-                board[row][col] = 1;
-                res = solveNQueens(board, row + 1, N) || res;
-                board[row][col] = 0;
-            }
-        }
-        return res;
-    }
-
-    void solveNQueens(int N) {
-        int board[10][10] = {0};
-        if (!solveNQueens(board, 0, N)) {
-            cout << "Solution does not exist!" << endl;
-        }
-    }
-
-    int main() {
-        int N;
-        cout << "Enter the value of N: ";
-        cin >> N;
-        solveNQueens(N);
-        return 0;
-    }
-</code>
-    </pre>
-</section>
-
-<section>
-    <h2>2. What is space and time efficiency? Why are they important?</h2>
+    <h2>1. Time complexity analysis</h2>
     <table>
         <tr>
             <th>Order</th>
@@ -185,147 +67,29 @@
         Space efficiency is about how much memory an algorithm uses, and time efficiency is about how fast it runs. These are important because they help us choose algorithms that can handle large tasks without using too much memory or taking too long. For example, algorithms that take constant time (O(1)) or logarithmic time (O(log n)) are very fast. However, those with quadratic (O(n²)) or exponential time (O(2ⁿ)) can be too slow for large problems. Choosing efficient algorithms is crucial in real-world tasks like processing data or running programs smoothly.
     </p>
 </section>
-
-<section>
-    <h2>3. Takeaways from Chapter 2 Design Principles</h2>
-    <p style="color: white;">
-        Key design principles include divide and conquer, greedy methods, dynamic programming, and abstraction. Divide and conquer breaks problems into smaller pieces, solves them, and combines the results, like in merge sort. Greedy methods focus on making the best choice at every step, such as finding the shortest route in a map. Dynamic programming stores solutions to smaller problems to avoid repeating work, like calculating Fibonacci numbers. Abstraction helps simplify problems by focusing only on what matters and ignoring extra details, like in object-oriented programming.
-    </p>
-
-    <h3>Divide and Conquer</h3>
-    <p style="color: white;">Break a problem into smaller sub-problems, solve them, and combine results (e.g., MergeSort, QuickSort).</p>
-
-    <h4 style="color: white;">Merge Sort</h4>
-    <pre>
-<code>
-ALGORITHM MergeSort(A[0..n-1])
-    // Sorts a given array A[0..n-1] by recursive mergesort
-    // Input: An array A[0..n-1] of orderable elements
-    // Output: Array A[0...n-1] sorted in nondecreasing order
-
-    if n > 1
-        copy A[0...|_n/2_| - 1] to B[0...|_n/2_| - 1]
-        copy A[|_n/2_| ... n - 1] to C[0...| ̄ n/2  ̄| - 1]
-        MergeSort(B[0...|_n/2_| - 1])
-        MergeSort(C[_{{{CITATION{{{_1{](https://github.com/thakurakhilesh1998/psdtohtml/tree/a8271d121a588c340665de50d6fac41a206172a6/courses%20offered.php)[_{{{CITATION{{{_2{](https://github.com/agirishkumar/DSA-Examples/tree/7f950b7cc1d9c798af4241ffbcacaa326af70d7e/tower_of_hanoi.c)[_{{{CITATION{{{_3{](https://github.com/klvijeth/APS-2020/tree/f4c8bdad58df1aa89de5dfe7a2ddfa51821174c8/CodeSnippets%2Ftower%20of%20hanoi.c)
-    ALGORITHM MergeSort(A[0..n-1])
-    // Sorts a given array A[0..n-1] by recursive mergesort
-    // Input: An array A[0..n-1] of orderable elements
-    // Output: Array A[0...n-1] sorted in nondecreasing order
-
-    if n > 1
-        copy A[0...|_n/2_| - 1] to B[0...|_n/2_| - 1]
-        copy A[|_n/2_| ... n - 1] to C[0...| ̄ n/2  ̄| - 1]
-        MergeSort(B[0...|_n/2_| - 1])
-        MergeSort(C[0...| ̄ n/2  ̄| - 1])
-        Merge(B, C, A)
-
-ALGORITHM Merge(B[0...p-1], C[0...q-1], A[0...p+q-1])
-    // Merges two sorted arrays into one sorted array
-    // Input: Arrays B[0...p-1] and C[0...q-1] both sorted
-    // Output: Sorted array A[0...p+q-1] of the elements of B and C
-
-    i <- 0
-    j <- 0
-    k <- 0
-    while i < p and j < q do
-        if B[i] <= C[j]
-            A[k] <- B[i]
-            i <- i + 1
-        else
-            A[k] <- C[j]
-            j <- j + 1
-        k <- k + 1
-    if i = p
-        copy C[j...q-1] to A[k...p+q-1]
-    else
-        copy B[i...p-1] to A[k...p+q-1]
-</code>
-    </pre>
-
-    <h3>Greedy Algorithms</h3>
-    <p style="color: white;">Make locally optimal choices aiming for global optimum (e.g., Prim’s and Kruskal’s algorithms).</p>
-
-    <h4 style="color: white;">Kruskal’s Algorithm</h4>
-    <pre>
-<code>
-    int Find(int parent[], int i) {
-        if (parent[i] != i)
-            parent[i] = Find(parent, parent[i]);
-        return parent[i];
-    }
-
-    void Union(int parent[], int rank[], int x, int y) {
-        int xroot = Find(parent, x);
-        int yroot = Find(parent, y);
-
-        if (rank[xroot] < rank[yroot])
-            parent[xroot] = yroot;
-        else if (rank[xroot] > rank[yroot])
-            parent[yroot] = xroot;
-        else {
-            parent[yroot] = xroot;
-            rank[xroot]++;
-        }
-    }
-
-    void KruskalMST(Edge edges[], int E, int V) {
-        int weights[E], idx[E];
-        for (int i = 0; i < E; i++) {
-            weights[i] = edges[i].weight;
-            idx[i] = i;
-        }
-
-        MergeSort(weights, idx, 0, E - 1);
-
-        int parent[V], rank[V];
-        for (int i = 0; i < V; i++) {
-            parent[i] = i;
-            rank[i] = 0;
-        }
-
-        Edge mst[V - 1];
-        int mstSize = 0;
-
-        for (int i = 0; i < E && mstSize < V - 1; i++) {
-            Edge edge = edges[idx[i]];
-            int x = Find(parent, edge.src);
-            int y = Find(parent, edge.dest);
-
-            if (x != y) {
-                mst[mstSize++] = edge;
-                Union(parent, rank, x, y);
-            }
-        }
-
-        cout << "Edges in the Minimum Spanning Tree:\n";
-        int cost = 0;
-        for (int i = 0; i < mstSize; i++) {
-            cout << mst[i].src << " -- " << mst[i].dest << " == " << mst[i].weight << endl;
-            cost += mst[i].weight;
-        }
-        cout << "Cost = " << cost << endl;
-    }
-</code>
-    </pre>
-</section>
-
-<section>
-    <h2>4. The Hierarchical Data and Tree Data Structures</h2>
+    <h2>2.Binary Search Tree</h2>
     <div class="gif">
         <img src="https://i.giphy.com/media/iJgItT1WOBadn4NGle/giphy.gif" alt="Hierarchical Data and Tree Data Structures">
     </div>
     <p style="color: white;">
-        Tree structures are useful for organizing and solving problems efficiently. Binary search trees (BSTs) are good for fast searching and sorting. Self-balancing trees like AVL trees or red-black trees ensure operations remain quick even as the tree grows. Tries are special trees for working with words, such as in auto-complete suggestions. Heaps are trees used to manage priorities, such as finding the largest or smallest item quickly. These structures are essential for handling complex tasks in an organized way.
-    </p>
-    <ul style="color: white;">
-        <li><strong>Tree</strong>: A hierarchical structure with a root node and child nodes.</li>
-        <li><strong>Binary Search Tree (BST)</strong>: Maintains sorted order for efficient searches.</li>
-        <li><strong>AVL Tree</strong>: Self-balancing BST that prevents skewness.</li>
-        <li><strong>Red-Black Tree</strong>: A balanced BST ensuring logarithmic time operations.</li>
-        <li><strong>Heap</strong>: A complete binary tree used in priority queues.</li>
-        <li><strong>Trie</strong>: Specialized for prefix-based search.</li>
-    </ul >
+    1. Challenges in Learning/Understanding BSTs
+- Tree Structure: Picture a family tree but for data. Visualizing how nodes are connected can be tricky at first.
+- Traversal Techniques: Learning to navigate through the tree in different ways (like visiting every room in a house in a specific order).
+- Balancing: Think of keeping a scale balanced;
+
+2. Challenges in Correlating with Real-World Applications
+- Abstract Nature: It's like learning a new game without seeing it played in real life. Connecting theory to practice takes time.
+- Performance Analysis: Understanding how fast your BST operations are in the real world can be like comparing race cars' speeds on different tracks.
+- Scalability: Ensuring the BST remains efficient as it grows .
+
+ 3. Determining the Most Efficient Approach
+- Problem Analysis: First, figure out if your problem involves ordered data or frequent searches—like deciding if you need a grocery list or a scavenger hunt.
+- Algorithm Comparison: Compare BST with other data structures to see which fits best—like choosing the right tool for a job.
+- Prototype and Test: Build a basic version and test it—like trying out a recipe before serving it at a party.
+- Iterate and Optimize: Refine your solution based on test results—like adjusting a recipe until it's perfect.
+- Seek Feedback: Collaborate with others to get new insights—like asking friends to taste-test your dish.
+
+   </p>
 </section>
     <h1>Algorithmic Concepts</h1>
     <h2>5. The Need for Array Query Algorithms</h2>
