@@ -1,3 +1,6 @@
+Here is the revised version of the HTML code with improved formatting, images, and tables:
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,33 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="(link unavailable)">
     <link rel="stylesheet" href="style.css">
-    <title>theory</title>
+    <title>Portfolio Website</title>
     <style>
-        h2 {
-        font-size: 28px; /* Increase the size of headings */
-        margin-bottom: 10px; /* Add some spacing below headings */
-    }
-    ul, u3, li {
-        font-size: 18px; /* Increase the size of list items */
-        line-height: 1.8; /* Add spacing between lines for better readability */
-    }
-    p {
-        font-size: 18px; /* Increase the size of paragraphs */
-    }
-    a {
-        text-decoration: none; /* Optional: Remove underline from links */
-        color: #0066cc; /* Optional: Add a nice color to links */
-    }
-    d4 {
-        font-size: 30px; /* Adjust this value to increase the size */
-        line-height: 1.8; /* Optional: Increase spacing between lines */
-    }
-    d4 dt {
-        font-weight: bold; /* Optional: Make definition terms bold */
-    }
-    d4 dd {
-        margin-left: 20px; /* Optional: Add spacing to the descriptions */
-    }
         h2 {
             font-size: 28px;
             margin-bottom: 10px;
@@ -49,7 +27,7 @@
         }
         code {
             font-size: 20px;
-            background-color: black;
+            background-color: #f0f0f0;
             padding: 10px;
             border: 1px solid #ddd;
         }
@@ -63,7 +41,7 @@
             text-align: left;
         }
         th {
-            background-color: black;
+            background-color: #f0f0f0;
         }
     </style>
 </head>
@@ -71,18 +49,6 @@
     <header>
         <a href="#" class="logo">Data Analysis and Algorithms</a>
     </header>
-    <section class="home">
-        <div class="home-img">
-           <img src="https://media.istockphoto.com/id/1071748346/photo/corrupted-data-red-binary-code.jpg?s=612x612&w=0&k=20&c=24otejzWwgiWiPlo_8Z2PjdJ1D2L7Es1x_F197yrSXA=" 
-     alt="Home Image" 
-     width="800" 
-     height="600">
-
-        </div>
-        <div class="home-content">
-            <a href="lp.html" class="btn">THEORY</a>
-            <a href="Reflections.html" class="btn">LAB</a>
-        </div>
     <section class="home">
         <div class="home-img">
             <img src="(link unavailable)" alt="Data Analysis Image" style="width: 100%; height: 500px; object-fit: cover;">
@@ -138,6 +104,7 @@ bool isSafe(int board[][10], int row, int col, int N) {
 bool solveNQueens(int board[][10], int row, int N) {
     if (row == N) {
         for (int i = 0; i < N; i++) {
+            
             for (int j = 0; j < N; j++) {
                 cout << (board[i][j] ? "Q " : ". ");
             }
