@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -146,6 +147,132 @@
                 solveNQueens(N);
                 return 0;
             }
+        </code></pre>
+           <img src="https://media.istockphoto.com/id/1071748346/photo/corrupted-data-red-binary-code.jpg" alt="Data Analysis and Algorithms Image" />
+        </div>
+        <div class="home-content">
+            <h1>Data Analysis and Algorithms</h1>
+            <p>Explore various concepts in data structures, algorithms, and problem-solving techniques, backed by real-world applications.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Course-Learning-Reflections</h2>
+
+        <h3>1. Problems in Nature: Iteration, Recursion, Backtracking</h3>
+        <img src="https://skilled.dev/images/natural-recursion.jpg" alt="Natural Recursion Example" />
+        <p>Problems in nature can be solved using iteration, recursion, or backtracking. Iteration involves repeating steps, like counting animal populations or watching seasonal changes. Recursion solves problems by breaking them into smaller parts, such as the patterns of tree branches or fractals in snowflakes. Backtracking explores all possible options and returns to try a different path if needed, like ants searching for food or animals solving mazes.</p>
+
+        <h4>Iteration Example: Factorial Calculation</h4>
+        <pre>
+            <code>
+                long long factorial (int n)
+                {  
+                    long long result = 1;
+                    for (int i = 1; i <= n; ++i) {
+                        result *= i;
+                    }
+                    return result;
+                }
+            </code>
+        </pre>
+
+        <h4>Recursion Example: Fibonacci Series</h4>
+        <pre>
+            <code>
+                int fibonacci(int n)
+                {
+                    if (n <= 1) {
+                        return n;
+                    }
+                    return fibonacci(n - 1) + fibonacci(n - 2);
+                }
+            </code>
+        </pre>
+
+        <h4>Recursion Example: Tower of Hanoi</h4>
+        <pre>
+            <code>
+                #include <stdio.h>
+                void towers(int n, char from, char to, char aux)
+                {
+                    if (n == 1)
+                    {
+                        printf("Move disk 1 from %c to %c\n", from, to);
+                        return;
+                    }
+                    towers(n - 1, from, aux, to);
+                    printf("Move disk %d from %c to %c\n", n, from, to);
+                    towers(n - 1, aux, to, from);
+                }
+
+                int main() 
+                {
+                    int n;
+                    printf("Enter the number of Disks to be moved\n");
+                    scanf("%d", &n);
+                    towers(n, 'A', 'C', 'B');
+                    return 0;
+                }
+            </code>
+        </pre>
+
+        <h4>Backtracking Example: N-Queens Problem</h4>
+        <pre>
+            <code>
+                #include <iostream>
+                using namespace std;
+
+                bool isSafe(int board[][10], int row, int col, int N)
+                {
+                    for (int i = 0; i < row; i++)
+                    {
+                        if (board[i][col] == 1 || 
+                            (col - (row - i) >= 0 && board[i][col - (row - i)] == 1) || 
+                            (col + (row - i) < N && board[i][col + (row - i)] == 1)) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+
+                bool solveNQueens(int board[][10], int row, int N) {
+                    if (row == N) {
+                        for (int i = 0; i < N; i++) {
+                            for (int j = 0; j < N; j++) {
+                                cout << (board[i][j] ? "Q " : ". ");
+                            }
+                            cout << endl;
+                        }
+                        cout << endl;
+                        return true;
+                    }
+                    
+                    bool res = false;
+                    for (int col = 0; col < N; col++) {
+                        if (isSafe(board, row, col, N)) {
+                            board[row][col] = 1;
+                            res = solveNQueens(board, row + 1, N) || res;
+                            board[row][col] = 0;
+                        }
+                    }
+                    return res;
+                }
+
+                void solveNQueens(int N) {
+                    int board[10][10] = {0};
+                    if (!solveNQueens(board, 0, N)) {
+                        cout << "Solution does not exist!" << endl;
+                    }
+                }
+
+                int main() {
+                    int N;
+                    cout << "Enter the value of N: ";
+                    cin >> N;
+                    solveNQueens(N);
+                    return 0;
+                }
             </code>
         </pre>
 
@@ -236,8 +363,30 @@
             <li><strong>Binary Search Tree (BST)</strong>: A tree where each node has at most two children, with the left child smaller and the right child larger than the parent.</li>
             <li><strong>AVL Tree</strong>: A self-balancing binary search tree that maintains balance during insertion and deletion.</li>
             <li><strong>Heap</strong>: A complete binary tree where parent nodes are compared to child nodes.</li>
+        </ul>
+            <ul>
+                <li><a href="#bst">Binary Search Tree (BST)</a></li>
+                <li><a href="#array-query">Array Query Algorithms</a></li>
+                <li><a href="#trees-vs-graphs">Trees vs Graphs</a></li>
+                <li><a href="#sorting-searching">Sorting and Searching Algorithms</a></li>
+                <li><a href="#graph-algorithms">Graph Algorithms</a></li>
+                <li><a href="#design-techniques">Algorithm Design Techniques</a></li>
+                <li><a href="#complex-problem-solving">Efficient Approach to Solve a Complex Problem</a></li>
+                <li><a href="#knowledge-application">Knowledge Application</a></li>
+                <li><a href="#pattern-identification">Strategies for Identifying Patterns</a></li>
+                <li><a href="#innovation-stability">Innovation vs Stability</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="bst">
+        <h2>Binary Search Tree (BST)</h2>
+        <p>A Binary Search Tree (BST) maintains sorted order for efficient searches. It allows for quick insertion, deletion, and search operations.</p>
+        <ul>
+            <li><strong>AVL Tree:</strong> A self-balancing BST that prevents skewness.</li>
+            <li><strong>Red-Black Tree:</strong> A balanced BST ensuring logarithmic time operations.</li>
+            <li><strong>Heap:</strong> A complete binary tree used in priority queues.</li>
             <li><strong>Trie:</strong> Specialized for prefix-based search.</li>
-             <li><strong>Red-Black Tree:</strong> A balanced BST ensuring logarithmic time operations.</li>
         </ul>
     </section>
 
@@ -306,7 +455,7 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsR3R3siV_0MDHRtBZxCcRZkTnX3RfdyErdQ&s" alt="Innovation vs Stability">
         <p>When tackling new challenges, innovative approaches may be necessary, but tried-and-tested methods provide stability for well-understood problems. Balancing innovation and stability is crucial in real-world applications.</p>
     </section>
-          <ul>
+            <ul>
                 <li><a href="#balancing-constraints">Balancing Multiple Conflicting Constraints in a Design</a></li>
                 <li><a href="#adapting-solution">Adapting an Existing Solution</a></li>
                 <li><a href="#identifying-patterns">Identifying Patterns in Complex Problems</a></li>
@@ -314,6 +463,7 @@
                 <li><a href="#addressing-limitations">Addressing Limitations in a Solution</a></li>
                 <li><a href="#knowledge-application">Applying Knowledge Across Contexts</a></li>
             </ul>
+
     <section id="balancing-constraints">
         <h2>Balancing Multiple Conflicting Constraints in a Design</h2>
         <p>In a project where I had to design an app for travel planning, I encountered conflicting constraints like user experience (UX) and performance. While I needed the app to be responsive and fast, incorporating complex features like multilingual support and real-time updates could potentially slow down performance. To address this, I prioritized performance optimizations by implementing efficient data structures (such as segment trees for quick range queries) and caching techniques to balance responsiveness with feature richness.</p>
@@ -348,11 +498,9 @@
     <section id="knowledge-application">
         <h2>Applying Knowledge from One Context to Solve a Problem in a Different Context</h2>
         <p>Applying knowledge from one context to solve problems in another is a powerful strategy. For instance, my experience in data analysis and algorithm design helped me solve the challenge of managing real-time data in my travel app. By applying my knowledge of graph theory, I adapted algorithms designed for static data to efficiently handle real-time updates and user interactions.</p>
-    </section>                        
-        </ul>
     </section>
-
-    <footer>
+ </section>
+  <footer>
         <p>&copy; 2025 Data Analysis and Algorithms. All rights reserved.</p>
     </footer>
 </body>
