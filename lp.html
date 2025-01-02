@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
+    <style>
+        h2 {
+            font-size: 28px; /* Increase the size of headings */
+            margin-bottom: 10px; /* Add some spacing below headings */
+        }
+        ul, u3, li {
+            font-size: 18px; /* Increase the size of list items */
+            line-height: 1.8; /* Add spacing between lines for better readability */
+        }
+        p {
+            font-size: 18px; /* Increase the size of paragraphs */
+        }
+        a {
+            text-decoration: none; /* Optional: Remove underline from links */
+            color: #0066cc; /* Optional: Add a nice color to links */
+        }
+        d4 {
+            font-size: 30px; /* Adjust this value to increase the size */
+            line-height: 1.8; /* Optional: Increase spacing between lines */
+        }
+        d4 dt {
+            font-weight: bold; /* Optional: Make definition terms bold */
+        }
+        d4 dd {
+            margin-left: 20px; /* Optional: Add spacing to the descriptions */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Data Analysis and Algorithms</a>
+    </header>
+    <section class="home">
+        <div class="home-img">
+           <img src="https://media.istockphoto.com/id/1071748346/photo/corrupted-data-red-binary-code.jpg" alt="Data Analysis Image">
+        </div>
+    </section>
+
+    <section class="content">
+        <h2>1. Problems in Nature: Iteration, Recursion, Backtracking</h2>
+        <p>Problems in nature can be solved using iteration, recursion, or backtracking. Iteration involves repeating steps, like counting animal populations or watching seasonal changes. Recursion solves problems by breaking them into smaller parts, such as the patterns of tree branches or fractals in snowflakes. Backtracking explores all possible options and returns to try a different path if needed, like ants searching for food or animals solving mazes.</p>
+        <h3>Iteration Example: Factorial Calculation</h3>
+        <pre><code>
+            long long factorial (int n)
+            {  
+                long long result = 1;
+                for (int i = 1; i <= n; ++i) {
+                    result *= i;
+                }
+                return result;
+            }
+        </code></pre>
+        <h3>Recursion Example: Fibonacci Series</h3>
+        <pre><code>
+            int fibonacci(int n)
+            {
+                if (n <= 1) {
+                    return n;
+                }
+                return fibonacci(n - 1) + fibonacci(n - 2);
+            }
+        </code></pre>
+        <h3>Recursion Example: Tower of Hanoi</h3>
+        <pre><code>
+            #include <stdio.h>
+            void towers(int n, char from, char to, char aux)
+            {
+                if (n == 1) {
+                    printf("Move disk 1 from %c to %c\n", from, to);
+                    return;
+                }
+                towers(n - 1, from, aux, to);
+                printf("Move disk %d from %c to %c\n", n, from, to);
+                towers(n - 1, aux, to, from);
+            }
+            
+            int main() 
+            {
+                int n;
+                printf("Enter the number of Disks to be moved\n");
+                scanf("%d", &n);
+                towers(n, 'A', 'C', 'B');
+                return 0;
+            }
+        </code></pre>
+        <h3>Backtracking Example: N-Queens Problem</h3>
+        <pre><code>
+            #include <iostream>
+            using namespace std;
+
+            bool isSafe(int board[][10], int row, int col, int N)
+            {
+                for (int i = 0; i < row; i++) {
+                    if (board[i][col] == 1 || 
+                        (col - (row - i) >= 0 && board[i][col - (row - i)] == 1) || 
+                        (col + (row - i) < N && board[i][col + (row - i)] == 1)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            bool solveNQueens(int board[][10], int row, int N) {
+                if (row == N) {
+                    for (int i = 0; i < N; i++) {
+                        for (int j = 0; j < N; j++) {
+                            cout << (board[i][j] ? "Q " : ". ");
+                        }
+                        cout << endl;
+                    }
+                    cout << endl;
+                    return true;
+                }
+                
+                bool res = false;
+                for (int col = 0; col < N; col++) {
+                    if (isSafe(board, row, col, N)) {
+                        board[row][col] = 1;
+                        res = solveNQueens(board, row + 1, N) || res;
+                        board[row][col] = 0;
+                    }
+                }
+                return res;
+            }
+
+            void solveNQueens(int N)
+            {
+                int board[10][10] = {0};
+                if (!solveNQueens(board, 0, N)) {
+                    cout << "Solution does not exist!" << endl;
+                }
+            }
+
+            int main() {
+                int N;
+                cout << "Enter the value of N: ";
+                cin >> N;
+                solveNQueens(N);
+                return 0;
+            }
+        </code></pre>
+
+        <!-- The rest of your content would follow here. You can continue placing the remaining content in similar format -->
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Data Analysis and Algorithms. All rights reserved.</p>
+    </footer>
+</body>
+</html>
