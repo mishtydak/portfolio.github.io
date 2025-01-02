@@ -6,34 +6,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Portfolio Website</title>
-            <style>
-                 h2 {
-        font-size: 28px; /* Increase the size of headings */
-        margin-bottom: 10px; /* Add some spacing below headings */
-    }
-    ul, u3, li {
-        font-size: 18px; /* Increase the size of list items */
-        line-height: 1.8; /* Add spacing between lines for better readability */
-    }
-    p {
-        font-size: 18px; /* Increase the size of paragraphs */
-    }
-    a {
-        text-decoration: none; /* Optional: Remove underline from links */
-        color: #0066cc; /* Optional: Add a nice color to links */
-    }
-    d4 {
-        font-size: 30px; /* Adjust this value to increase the size */
-        line-height: 1.8; /* Optional: Increase spacing between lines */
-    }
-    d4 dt {
-        font-weight: bold; /* Optional: Make definition terms bold */
-    }
-    d4 dd {
-        margin-left: 20px; /* Optional: Add spacing to the descriptions */
-    }
-</style>
-
+    <style>
+        h2 {
+            font-size: 28px; /* Increase the size of headings */
+            margin-bottom: 10px; /* Add some spacing below headings */
+        }
+        ul, li {
+            font-size: 18px; /* Increase the size of list items */
+            line-height: 1.8; /* Add spacing between lines for better readability */
+        }
+        p {
+            font-size: 18px; /* Increase the size of paragraphs */
+        }
+        a {
+            text-decoration: none; /* Optional: Remove underline from links */
+            color: #0066cc; /* Optional: Add a nice color to links */
+        }
+        d4 {
+            font-size: 30px; /* Adjust this value to increase the size */
+            line-height: 1.8; /* Optional: Increase spacing between lines */
+        }
+        d4 dt {
+            font-weight: bold; /* Optional: Make definition terms bold */
+        }
+        d4 dd {
+            margin-left: 20px; /* Optional: Add spacing to the descriptions */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -43,39 +42,143 @@
         <div class="home-content">
             <a href="theory.html" class="btn">THEORY</a>
             <a href="Reflections.html" class="btn">LAB</a>
-            <h2><span>What is the course about?</span></h2><br><br>
-            <li> This course focuses on understanding and implementing data structures and algorithms, 
-                which are fundamental concepts in computer science. It provides students with the necessary knowledge to solve complex problems efficiently. 
-                The course covers topics like sorting, searching, graph traversal, and dynamic programming, preparing students for technical interviews and 
-                real-world applications.<li><br><br>
-            <h2>What kind of data structures and algorithms have you studied?</h2>
-    <ul>
-        <li>Arrays</li>
-        <li>Linked Lists</li>
-        <li>Stacks and Queues</li>
-        <li>Hashing</li>
-        <li>Binary Trees</li>
-        <li>Graphs</li>
-        <li>Dynamic Programming</li>
-        <li>Sorting Algorithms (Quick Sort, Merge Sort, etc.)</li>
-        <li>Searching Algorithms (Binary Search, Linear Search)</li>
-        <li>Greedy Algorithms</li>
-    </ul>
-            <h2>How do you connect the course with real-time applications?</h2>
-    <p>
-        The concepts learned in this course can be applied to real-time applications such as:
+            <h2>LAB Reflections</h2>
+            <h2>1. Time complexity analysis</h2>
+    <table>
+        <tr>
+            <th>Order</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>O(1)</td>
+            <td>Constant time</td>
+            <td>Accessing an element in an array</td>
+        </tr>
+        <tr>
+            <td>O(log n)</td>
+            <td>Logarithmic time</td>
+            <td>Binary search</td>
+        </tr>
+        <tr>
+            <td>O(n)</td>
+            <td>Linear time</td>
+            <td>Linear search</td>
+        </tr>
+        <tr>
+            <td>O(n log n)</td>
+            <td>Log-linear time</td>
+            <td>Sorting algorithms like MergeSort</td>
+        </tr>
+        <tr>
+            <td>O(n²)</td>
+            <td>Quadratic time</td>
+            <td>Bubble Sort</td>
+        </tr>
+        <tr>
+            <td>O(2ⁿ)</td>
+            <td>Exponential time</td>
+            <td>Solving the Tower of Hanoi</td>
+        </tr>
+    </table>
+    <p style="color: white;">
+        Space efficiency is about how much memory an algorithm uses, and time efficiency is about how fast it runs. These are important because they help us choose algorithms that can handle large tasks without using too much memory or taking too long. For example, algorithms that take constant time (O(1)) or logarithmic time (O(log n)) are very fast. However, those with quadratic (O(n²)) or exponential time (O(2ⁿ)) can be too slow for large problems. Choosing efficient algorithms is crucial in real-world tasks like processing data or running programs smoothly.
     </p>
-    <ul>
-        <li>Optimizing database queries through efficient searching and sorting algorithms.</li>
-        <li>Building scalable and efficient web applications by using appropriate data structures like hash maps and graphs.</li>
-        <li>Designing algorithms for recommendation systems, e-commerce platforms, and social media networks.</li>
-        <li>Improving the performance of games and simulations by implementing algorithms like pathfinding (A*) and dynamic programming.</li>
-        <li>Handling large datasets efficiently in industries like finance, healthcare, and e-commerce by applying data structure principles to ensure quick access and processing.</li>
+</section>
+    <h2>2.Binary Search Tree</h2>
+    <div class="gif">
+        <img src="https://i.giphy.com/media/iJgItT1WOBadn4NGle/giphy.gif" alt="Hierarchical Data and Tree Data Structures">
+    </div>
+    <p style="color: white;">
+1. Challenges in Learning/Understanding BSTs<br>
+- Picture a family tree but for data. Visualizing how nodes are connected can be tricky at first.<br>
+- Learning to navigate through the tree in different ways (like visiting every room in a house in a specific order).<br>
+- Think of keeping a scale balanced;<br><br>
+
+2. Challenges in Correlating with Real-World Applications<br>
+- It's like learning a new game without seeing it played in real life. Connecting theory to practice takes time.<br>
+- Understanding how fast your BST operations are in the real world can be like comparing race cars' speeds on different tracks.<br>
+- Ensuring the BST remains efficient as it grows .<br><br>
+
+ 3. Determining the Most Efficient Approach<br>
+- First, figure out if your problem involves ordered data or frequent searches—like deciding if you need a grocery list or a scavenger hunt.<br>
+- Compare BST with other data structures to see which fits best—like choosing the right tool for a job.<br>
+- Collaborate with others to get new insights—like asking friends to taste-test your dish.<br><br>
+
+   </p>
+</section>
+    <h1>Algorithmic Concepts</h1>
+    <h2>3.DFS and BFS</h2>
+    <img src="https://scaler.com/topics/images/the-sum-of-values-segment-tree.gif" alt="Array Query Algorithms">
+    <p style="color: white;">1. Challenges in Learning/Understanding DFS and BFS<br>
+- Grasping the depth-first (DFS) vs. level-wise (BFS) approach.<br>
+- Picturing traversal processes.<br>
+- Writing effective code, managing recursion for DFS and queues for BFS.<br>
+- Avoiding infinite loops in graphs with cycles.<br><br>
+
+2. Challenges in Correlating with Real-World Applications<br>
+- Connecting the theory to practical uses like web crawling or social network analysis.<br>
+- Evaluating efficiency in real-world scenarios.<br>
+- Applying algorithms to large-scale systems, like network routing.<br><br>
+
+3. Determining the Efficient Approach<br>
+- Identify the problem type—depth exploration (DFS) vs. level exploration (BFS).<br>
+- Evaluate based on complexity and specific needs.<br>
+- Implement both, test, and compare.<br>
+<ul>
+<li><strong>Segment Tree:</strong> Handles range queries efficiently.</li>
+        <li><strong>Fenwick Tree:</strong> Optimized for cumulative frequency queries.</li>
+        <li><strong>Sparse Table:</strong> Precomputes answers for range queries.</li>
     </ul>
-        </div>
+
+    <h2>3.Heap</h2>
+    <img src="https://techdifferences.com/wp-content/uploads/2018/03/Untitled-1.jpg" alt="Trees and Graphs">
+    <p style="color: white;">
+    1.Challenges in Learning/Understanding Heaps<br>
+      Understanding the binary tree representation of heaps.<br>
+      Grasping the min-heap and max-heap properties.<br>
+      Writing efficient code for insertion, deletion, and heapify operations.<br>
+     Visualizing the heap structure and operations.<br><br>
+
+    2.Challenges in Correlating with Real-World Applications<br>
+    Connecting heap concepts to real-world uses like priority queues and scheduling.<br>
+     Evaluating efficiency in practical scenarios.<br>
+     Applying heaps to large-scale data processing tasks.<br><br>
+
+    3.Determining the Efficient Approach<br>
+    Identify if the problem requires a priority-based approach.<br>
+    Evaluate heap against other data structures for suitability.<br>
+    Implement and test the heap operations.<br>
+    </p>
+    <h2>4.Sorting</h2>
+    <img src="https://cdn.dribbble.com/users/6319642/screenshots/14533255/sorting.gif" alt="Sorting and Searching Algorithms">
+    <p style="color: white;">Sorting and searching algorithms are essential for managing and retrieving data efficiently. Sorting algorithms, such as merge sort and quick sort, organize data in a specified order, which is vital for applications like e-commerce and data analysis. Merge sort uses a divide-and-conquer strategy, while quick sort selects a pivot to partition and sort the data. Searching algorithms, such as binary search, allow for quick retrieval of items from sorted lists by halving the search space repeatedly. This makes them ideal for applications like finding records in databases or locating files.</p>
+   
+    <h2>5.Pattern searching</h2>
+    <img src="https://66.media.tumblr.com/6ea9a1189989bdc7179cbce0a9e89c0a/e1eec697962dd817-37/s540x810/cbf5cdadcf1200aca8a0715f777174ee987b3c32.gif">
+    <p style="color: white;">
+        1. Challenges in Learning/Understanding Pattern Searching Concepts<br>
+Understanding logic, time, and space complexities of algorithms like KMP or Rabin-Karp.<br>
+Handling special cases like overlapping patterns or empty strings.<br>
+Debugging: Errors in implementation, especially with indexing or hash collisions.<br><br>
+2. Challenges in Correlating with Real-World Applications<br>
+Applying theoretical concepts to areas like DNA sequencing or log analysis.<br>
+Ensuring algorithms perform efficiently on large datasets.<br>
+Dealing with noise or inconsistent patterns in real-world data.<br><br>
+3. Determining the Most Efficient Approach/Design Techniques<br>
+Define objectives and constraints (e.g., exact vs. approximate matching).<br>
+Compare based on time/space complexity (e.g., KMP for repetitive patterns, Boyer-Moore for large texts).<br>
+Preprocess data, use parallelism for large datasets, or adopt dynamic programming for complex problems.<br><br>
+
+    </p>
+    <h2>6.Graph Algorithms</h2>
+    <img src="https://miro.medium.com/v2/resize:fit:1100/1*fnYx_2nBxic7Gz4u4c3ZPg.gif" alt="Graph Algorithms">
+    <p style="color: white;">Graph algorithms play a vital role in solving problems related to networks and connections, particularly through spanning trees and shortest paths. A spanning tree connects all vertices in a graph without cycles, using the minimum number of edges, which is essential for optimizing network design and infrastructure. Algorithms like Kruskal's and Prim's help identify minimum spanning trees for efficient communication networks and road systems. Conversely, shortest path algorithms, such as Dijkstra's and Bellman-Ford, find the most efficient route between nodes, which is crucial for GPS navigation and logistics.</p>
+
+</div>
         <a href="theory.html" class="btn">HOME</a>
-            <a href="ci.html" class="btn">COURSE PROJECT INFORMATION</a>
-          <a href="lp.html" class="btn">COURSE LEARNING REFLECTIONS</a>
+        <a href="ci.html" class="btn">COURSE PROJECT INFORMATION</a>
+        <a href="lp.html" class="btn">COURSE LEARNING REFLECTIONS</a>
     </section>
 </body>
 </html>
