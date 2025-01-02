@@ -146,9 +146,167 @@
                 solveNQueens(N);
                 return 0;
             }
-        </code></pre>
+            </code>
+        </pre>
 
-        <!-- The rest of your content would follow here. You can continue placing the remaining content in similar format -->
+        <h3>2. What is space and time efficiency? Why are they important?</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>O(1)</td>
+                    <td>Constant time</td>
+                    <td>Accessing an element in an array</td>
+                </tr>
+                <tr>
+                    <td>O(log n)</td>
+                    <td>Logarithmic time</td>
+                    <td>Binary search</td>
+                </tr>
+                <tr>
+                    <td>O(n)</td>
+                    <td>Linear time</td>
+                    <td>Linear search</td>
+                </tr>
+                <tr>
+                    <td>O(n log n)</td>
+                    <td>Log-linear time</td>
+                    <td>Sorting algorithms like MergeSort</td>
+                </tr>
+                <tr>
+                    <td>O(n²)</td>
+                    <td>Quadratic time</td>
+                    <td>Bubble Sort</td>
+                </tr>
+                <tr>
+                    <td>O(2ⁿ)</td>
+                    <td>Exponential time</td>
+                    <td>Solving the Tower of Hanoi</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Space efficiency is about how much memory an algorithm uses, and time efficiency is about how fast it runs. These are important because they help us choose algorithms that can handle large tasks without using too much memory or taking too long. For example, algorithms that take constant time (O(1)) or logarithmic time (O(log n)) are very fast. However, those with quadratic (O(n²)) or exponential time (O(2ⁿ)) can be too slow for large problems. Choosing efficient algorithms is crucial in real-world tasks like processing data or running programs smoothly.</p>
+
+        <h3>3. Takeaways from Chapter 2 Design Principles</h3>
+        <p>Key design principles include divide and conquer, greedy methods, dynamic programming, and abstraction. Divide and conquer breaks problems into smaller pieces, solves them, and combines the results, like in merge sort. Greedy methods focus on making the best choice at every step, such as finding the shortest route in a map. Dynamic programming stores solutions to smaller problems to avoid repeating work, like calculating Fibonacci numbers. Abstraction helps simplify problems by focusing only on what matters and ignoring extra details, like in object-oriented programming.</p>
+
+        <h4>Divide and Conquer</h4>
+        <pre>
+            <code>
+                ALGORITHM MergeSort(A[0..n-1])
+                    if n > 1
+                        copy A[0...n/2 - 1] to B[0...n/2 - 1]
+                        copy A[n/2 ... n - 1] to C[0...n/2 - 1]
+                        MergeSort(B)
+                        MergeSort(C)
+                        Merge(B, C, A)
+
+                ALGORITHM Merge(B, C, A)
+                    i <- 0
+                    j <- 0
+                    k <- 0
+                    while i < p and j < q
+                        if B[i] <= C[j]
+                            A[k] <- B[i]
+                            i <- i + 1
+                        else
+                            A[k] <- C[j]
+                            j <- j + 1
+                        k <- k + 1
+                    if i == p
+                        copy C[j...q-1] to A[k...p+q-1]
+                    else
+                        copy B[i...p-1] to A[k...p+q-1]
+            </code>
+        </pre>
+        <p>Break a problem into smaller sub-problems, solve them, and combine results (e.g., MergeSort, QuickSort).</p>
+
+        <h3>4. The Hierarchical Data and Tree Data Structures</h3>
+        <img src="https://i.giphy.com/media/iJgItT1WOBadn4NGle/giphy.gif" alt="Tree Data Structure" />
+        <p>Tree structures are useful for organizing and solving problems efficiently. Binary search trees (BSTs) are good for fast searching and sorting. Self-balancing trees like AVL trees or red-black trees ensure operations remain quick even as the tree grows. Tries are special trees for working with words, such as in auto-complete suggestions. Heaps are trees used to manage priorities, such as finding the largest or smallest item quickly. These structures are essential for handling complex tasks in an organized way.</p>
+        <ul>
+            <li><strong>Tree</strong>: A hierarchical structure with a root node and child nodes.</li>
+            <li><strong>Binary Search Tree (BST)</strong>: A tree where each node has at most two children, with the left child smaller and the right child larger than the parent.</li>
+            <li><strong>AVL Tree</strong>: A self-balancing binary search tree that maintains balance during insertion and deletion.</li>
+            <li><strong>Heap</strong>: A complete binary tree where parent nodes are compared to child nodes.</li>
+            <li><strong>Trie:</strong> Specialized for prefix-based search.</li>
+             <li><strong>Red-Black Tree:</strong> A balanced BST ensuring logarithmic time operations.</li>
+        </ul>
+    </section>
+
+    <section id="array-query">
+        <h2>The Need for Array Query Algorithms</h2>
+        <img src="https://scaler.com/topics/images/the-sum-of-values-segment-tree.gif" alt="Segment Tree Example">
+        <p>Array query algorithms help retrieve and update data quickly. For example, prefix sums can calculate the total of a range in an array very fast. Segment trees and Fenwick trees are advanced tools that allow for both updates and queries efficiently. These algorithms are used in applications like tracking scores, stock prices, or rainfall over time.</p>
+        <ul>
+            <li><strong>Segment Tree:</strong> Handles range queries efficiently.</li>
+            <li><strong>Fenwick Tree:</strong> Optimized for cumulative frequency queries.</li>
+            <li><strong>Sparse Table:</strong> Precomputes answers for range queries.</li>
+        </ul>
+    </section>
+
+    <section id="trees-vs-graphs">
+        <h2>Differentiation Between Trees and Graphs</h2>
+        <img src="https://techdifferences.com/wp-content/uploads/2018/03/Untitled-1.jpg" alt="Trees vs Graphs">
+        <p>Trees and graphs represent data differently and are used for distinct purposes. Trees are hierarchical with a single root and no cycles, like family trees or file systems. Graphs, on the other hand, are more general, allowing multiple connections and cycles, such as in social networks or transportation systems. Trees have specific traversals like preorder, inorder, and postorder for structured data exploration, while graphs use BFS and DFS for navigating interconnected data.</p>
+    </section>
+
+    <section id="sorting-searching">
+        <h2>Sorting and Searching Algorithms in Real-World Contexts</h2>
+        <img src="https://cdn.dribbble.com/users/6319642/screenshots/14533255/sorting.gif" alt="Sorting Algorithms">
+        <p>Sorting and searching algorithms are essential for managing and retrieving data efficiently. Sorting algorithms, such as merge sort and quick sort, organize data in a specified order, which is vital for applications like e-commerce and data analysis. Merge sort uses a divide-and-conquer strategy, while quick sort selects a pivot to partition and sort the data. Searching algorithms, such as binary search, allow for quick retrieval of items from sorted lists by halving the search space repeatedly. This makes them ideal for applications like finding records in databases or locating files.</p>
+    </section>
+
+    <section id="graph-algorithms">
+        <h2>Importance of Graph Algorithms</h2>
+        <img src="https://miro.medium.com/v2/resize:fit:1100/1*fnYx_2nBxic7Gz4u4c3ZPg.gif" alt="Graph Algorithms">
+        <p>Graph algorithms play a vital role in solving problems related to networks and connections, particularly through spanning trees and shortest paths. A spanning tree connects all vertices in a graph without cycles, using the minimum number of edges, which is essential for optimizing network design and infrastructure. Algorithms like Kruskal's and Prim's help identify minimum spanning trees for efficient communication networks and road systems. Shortest path algorithms, such as Dijkstra's and Bellman-Ford, find the most efficient route between nodes, which is crucial for GPS navigation and logistics.</p>
+    </section>
+
+    <section id="design-techniques">
+        <h2>Algorithm Design Techniques</h2>
+        <img src="https://cdn.devdojo.com/images/september2021/dandc.gif" alt="Algorithm Design Techniques">
+        <p><strong>Divide and Conquer:</strong> This technique involves breaking a problem into smaller subproblems, solving them independently, and combining their results. It is effective for problems that can be recursively divided, as seen in algorithms like merge sort and quick sort.</p>
+        <p><strong>Dynamic Programming:</strong> This method is used for optimization problems with overlapping subproblems, storing the results of solved subproblems to avoid redundant calculations. It is commonly applied in scenarios like the Fibonacci sequence and the knapsack problem.</p>
+        <p><strong>Greedy Algorithms:</strong> Greedy techniques make locally optimal choices at each step, aiming for a global optimum. They are particularly useful for problems like minimum spanning trees and activity selection, where local decisions lead to overall efficiency.</p>
+        <p><strong>Backtracking:</strong> This technique explores all possible solutions by trying partial solutions and abandoning them when they fail to meet criteria. It is commonly applied in constraint satisfaction problems, such as the N-Queens problem and solving mazes.</p>
+    </section>
+
+    <section id="complex-problem-solving">
+        <h2>Efficient Approach to Solve a Complex Problem</h2>
+        <img src="https://s3.eu-central-1.amazonaws.com/de-uploads-7e3kk3/45366/challenges-final-noline-mobile.073b312ef43a.gif" alt="Problem Solving Process">
+        <p>To find the best way to solve a complex problem, I first make sure I understand the issue clearly and break it down into smaller parts. Then, I look for existing solutions and compare different methods based on how well they work and how easy they are to implement. I often create a simple version of the solution to test it and see what works best. I keep improving the solution based on the test results and also ask for feedback from others to make it even better.</p>
+    </section>
+
+    <section id="knowledge-application">
+        <h2>Knowledge Application</h2>
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0d97d179722289.5ccbece3c0162.gif" alt="Knowledge Application">
+        <p>Applying knowledge from one context to solve problems in another can be highly beneficial. It allows for the transfer of effective strategies and insights, fostering innovative solutions. For instance, techniques learned in data analysis can help in decision-making processes in urban planning. By recognizing patterns and relationships in one field, it becomes easier to identify similar challenges and apply proven methods to address them in a new context, enhancing problem-solving capabilities overall.</p>
+    </section>
+
+    <section id="pattern-identification">
+        <h2>Strategies for Identifying Patterns</h2>
+        <ul>
+            <li><strong>Divide and Conquer:</strong> Break down complex problems into smaller, manageable subproblems, solving each one to identify patterns in the overall structure.</li>
+            <li><strong>Data Structure Selection:</strong> Choose appropriate data structures (like trees or graphs) that naturally reflect the relationships in the data, aiding in pattern recognition during analysis.</li>
+            <li><strong>Algorithm Complexity Analysis:</strong> Analyze the time and space complexity of algorithms to understand their efficiency, which can highlight patterns in performance across different inputs.</li>
+            <li><strong>Testing and Iteration:</strong> Conduct tests with varied input cases and iterate on design choices, observing how changes impact performance and revealing underlying patterns in behavior.</li>
+        </ul>
+    </section>
+
+    <section id="innovation-stability">
+        <h2>Innovation vs Stability</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsR3R3siV_0MDHRtBZxCcRZkTnX3RfdyErdQ&s" alt="Innovation vs Stability">
+        <p>When tackling new challenges, innovative approaches may be necessary, but tried-and-tested methods provide stability for well-understood problems. Balancing innovation and stability is crucial in real-world applications.</p>
+    </section>
+        </ul>
     </section>
 
     <footer>
