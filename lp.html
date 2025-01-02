@@ -39,16 +39,10 @@
     <header>
         <a href="#" class="logo">Data Analysis and Algorithms</a>
     </header>
-    <section class="home">
-        <div class="home-img">
-           <img src="https://media.istockphoto.com/id/1071748346/photo/corrupted-data-red-binary-code.jpg" alt="Data Analysis Image">
-        </div>
-    </section>
-
     <section class="content">
         <h2>1. Problems in Nature: Iteration, Recursion, Backtracking</h2>
         <p>Problems in nature can be solved using iteration, recursion, or backtracking. Iteration involves repeating steps, like counting animal populations or watching seasonal changes. Recursion solves problems by breaking them into smaller parts, such as the patterns of tree branches or fractals in snowflakes. Backtracking explores all possible options and returns to try a different path if needed, like ants searching for food or animals solving mazes.</p>
-        <h3>Iteration Example: Factorial Calculation</h3>
+        <h2>Iteration Example: Factorial Calculation</h2>
         <pre><code>
             long long factorial (int n)
             {  
@@ -59,7 +53,7 @@
                 return result;
             }
         </code></pre>
-        <h3>Recursion Example: Fibonacci Series</h3>
+        <h2>Recursion Example: Fibonacci Series</h2>
         <pre><code>
             int fibonacci(int n)
             {
@@ -69,7 +63,7 @@
                 return fibonacci(n - 1) + fibonacci(n - 2);
             }
         </code></pre>
-        <h3>Recursion Example: Tower of Hanoi</h3>
+        <h2>Recursion Example: Tower of Hanoi</h2>
         <pre><code>
             #include <stdio.h>
             void towers(int n, char from, char to, char aux)
@@ -159,11 +153,11 @@
     <section>
         <h2>Course-Learning-Reflections</h2>
 
-        <h3>1. Problems in Nature: Iteration, Recursion, Backtracking</h3>
+        <h2>1. Problems in Nature: Iteration, Recursion, Backtracking</h2>
         <img src="https://skilled.dev/images/natural-recursion.jpg" alt="Natural Recursion Example" />
         <p>Problems in nature can be solved using iteration, recursion, or backtracking. Iteration involves repeating steps, like counting animal populations or watching seasonal changes. Recursion solves problems by breaking them into smaller parts, such as the patterns of tree branches or fractals in snowflakes. Backtracking explores all possible options and returns to try a different path if needed, like ants searching for food or animals solving mazes.</p>
 
-        <h4>Iteration Example: Factorial Calculation</h4>
+        <h2>Iteration Example: Factorial Calculation</h2>
         <pre>
             <code>
                 long long factorial (int n)
@@ -177,7 +171,7 @@
             </code>
         </pre>
 
-        <h4>Recursion Example: Fibonacci Series</h4>
+        <h>Recursion Example: Fibonacci Series</h2>
         <pre>
             <code>
                 int fibonacci(int n)
@@ -190,7 +184,7 @@
             </code>
         </pre>
 
-        <h4>Recursion Example: Tower of Hanoi</h4>
+        <h2>Recursion Example: Tower of Hanoi</h2>
         <pre>
             <code>
                 #include <stdio.h>
@@ -217,7 +211,7 @@
             </code>
         </pre>
 
-        <h4>Backtracking Example: N-Queens Problem</h4>
+        <h2>Backtracking Example: N-Queens Problem</h2>
         <pre>
             <code>
                 #include <iostream>
@@ -276,7 +270,7 @@
             </code>
         </pre>
 
-        <h3>2. What is space and time efficiency? Why are they important?</h3>
+        <h2>2. What is space and time efficiency? Why are they important?</h2>
         <table>
             <thead>
                 <tr>
@@ -319,12 +313,20 @@
             </tbody>
         </table>
 
-        <p>Space efficiency is about how much memory an algorithm uses, and time efficiency is about how fast it runs. These are important because they help us choose algorithms that can handle large tasks without using too much memory or taking too long. For example, algorithms that take constant time (O(1)) or logarithmic time (O(log n)) are very fast. However, those with quadratic (O(n²)) or exponential time (O(2ⁿ)) can be too slow for large problems. Choosing efficient algorithms is crucial in real-world tasks like processing data or running programs smoothly.</p>
+        <p>Space efficiency is about how much memory an algorithm uses, and time efficiency is about how fast it runs.
+            These are important because they help us choose algorithms that can handle large tasks without using too much memory or taking too long.
+            For example, algorithms that take constant time (O(1)) or logarithmic time (O(log n)) are very fast. However, those with quadratic (O(n²))
+            or exponential time (O(2ⁿ)) can be too slow for large problems. Choosing efficient algorithms is crucial in real-world tasks like processing
+            data or running programs smoothly.</p>
 
-        <h3>3. Takeaways from Chapter 2 Design Principles</h3>
-        <p>Key design principles include divide and conquer, greedy methods, dynamic programming, and abstraction. Divide and conquer breaks problems into smaller pieces, solves them, and combines the results, like in merge sort. Greedy methods focus on making the best choice at every step, such as finding the shortest route in a map. Dynamic programming stores solutions to smaller problems to avoid repeating work, like calculating Fibonacci numbers. Abstraction helps simplify problems by focusing only on what matters and ignoring extra details, like in object-oriented programming.</p>
+        <h2>3. Takeaways from Chapter 2 Design Principles</h2>
+        <p>Key design principles include divide and conquer, greedy methods, dynamic programming, and abstraction.
+            Divide and conquer breaks problems into smaller pieces, solves them, and combines the results, like in merge sort.
+            Greedy methods focus on making the best choice at every step, such as finding the shortest route in a map.
+            Dynamic programming stores solutions to smaller problems to avoid repeating work, like calculating Fibonacci numbers. 
+            Abstraction helps simplify problems by focusing only on what matters and ignoring extra details, like in object-oriented programming.</p>
 
-        <h4>Divide and Conquer</h4>
+        <h2>Divide and Conquer</h2>
         <pre>
             <code>
                 ALGORITHM MergeSort(A[0..n-1])
@@ -355,7 +357,7 @@
         </pre>
         <p>Break a problem into smaller sub-problems, solve them, and combine results (e.g., MergeSort, QuickSort).</p>
 
-        <h3>4. The Hierarchical Data and Tree Data Structures</h3>
+        <h2>4. The Hierarchical Data and Tree Data Structures</h2>
         <img src="https://i.giphy.com/media/iJgItT1WOBadn4NGle/giphy.gif" alt="Tree Data Structure" />
         <p>Tree structures are useful for organizing and solving problems efficiently. Binary search trees (BSTs) are good for fast searching and sorting. Self-balancing trees like AVL trees or red-black trees ensure operations remain quick even as the tree grows. Tries are special trees for working with words, such as in auto-complete suggestions. Heaps are trees used to manage priorities, such as finding the largest or smallest item quickly. These structures are essential for handling complex tasks in an organized way.</p>
         <ul>
@@ -391,7 +393,7 @@
     </section>
 
     <section id="array-query">
-        <h2>The Need for Array Query Algorithms</h2>
+        <h2>5.The Need for Array Query Algorithms</h2>
         <img src="https://scaler.com/topics/images/the-sum-of-values-segment-tree.gif" alt="Segment Tree Example">
         <p>Array query algorithms help retrieve and update data quickly. For example, prefix sums can calculate the total of a range in an array very fast. Segment trees and Fenwick trees are advanced tools that allow for both updates and queries efficiently. These algorithms are used in applications like tracking scores, stock prices, or rainfall over time.</p>
         <ul>
@@ -402,25 +404,25 @@
     </section>
 
     <section id="trees-vs-graphs">
-        <h2>Differentiation Between Trees and Graphs</h2>
+        <h2>6.Differentiation Between Trees and Graphs</h2>
         <img src="https://techdifferences.com/wp-content/uploads/2018/03/Untitled-1.jpg" alt="Trees vs Graphs">
         <p>Trees and graphs represent data differently and are used for distinct purposes. Trees are hierarchical with a single root and no cycles, like family trees or file systems. Graphs, on the other hand, are more general, allowing multiple connections and cycles, such as in social networks or transportation systems. Trees have specific traversals like preorder, inorder, and postorder for structured data exploration, while graphs use BFS and DFS for navigating interconnected data.</p>
     </section>
 
     <section id="sorting-searching">
-        <h2>Sorting and Searching Algorithms in Real-World Contexts</h2>
+        <h2>7.Sorting and Searching Algorithms in Real-World Contexts</h2>
         <img src="https://cdn.dribbble.com/users/6319642/screenshots/14533255/sorting.gif" alt="Sorting Algorithms">
         <p>Sorting and searching algorithms are essential for managing and retrieving data efficiently. Sorting algorithms, such as merge sort and quick sort, organize data in a specified order, which is vital for applications like e-commerce and data analysis. Merge sort uses a divide-and-conquer strategy, while quick sort selects a pivot to partition and sort the data. Searching algorithms, such as binary search, allow for quick retrieval of items from sorted lists by halving the search space repeatedly. This makes them ideal for applications like finding records in databases or locating files.</p>
     </section>
 
     <section id="graph-algorithms">
-        <h2>Importance of Graph Algorithms</h2>
+        <h2>8.Importance of Graph Algorithms</h2>
         <img src="https://miro.medium.com/v2/resize:fit:1100/1*fnYx_2nBxic7Gz4u4c3ZPg.gif" alt="Graph Algorithms">
         <p>Graph algorithms play a vital role in solving problems related to networks and connections, particularly through spanning trees and shortest paths. A spanning tree connects all vertices in a graph without cycles, using the minimum number of edges, which is essential for optimizing network design and infrastructure. Algorithms like Kruskal's and Prim's help identify minimum spanning trees for efficient communication networks and road systems. Shortest path algorithms, such as Dijkstra's and Bellman-Ford, find the most efficient route between nodes, which is crucial for GPS navigation and logistics.</p>
     </section>
 
     <section id="design-techniques">
-        <h2>Algorithm Design Techniques</h2>
+        <h2>9.Algorithm Design Techniques</h2>
         <img src="https://cdn.devdojo.com/images/september2021/dandc.gif" alt="Algorithm Design Techniques">
         <p><strong>Divide and Conquer:</strong> This technique involves breaking a problem into smaller subproblems, solving them independently, and combining their results. It is effective for problems that can be recursively divided, as seen in algorithms like merge sort and quick sort.</p>
         <p><strong>Dynamic Programming:</strong> This method is used for optimization problems with overlapping subproblems, storing the results of solved subproblems to avoid redundant calculations. It is commonly applied in scenarios like the Fibonacci sequence and the knapsack problem.</p>
@@ -429,19 +431,19 @@
     </section>
 
     <section id="complex-problem-solving">
-        <h2>Efficient Approach to Solve a Complex Problem</h2>
+        <h2> Efficient Approach to Solve a Complex Problem</h2>
         <img src="https://s3.eu-central-1.amazonaws.com/de-uploads-7e3kk3/45366/challenges-final-noline-mobile.073b312ef43a.gif" alt="Problem Solving Process">
         <p>To find the best way to solve a complex problem, I first make sure I understand the issue clearly and break it down into smaller parts. Then, I look for existing solutions and compare different methods based on how well they work and how easy they are to implement. I often create a simple version of the solution to test it and see what works best. I keep improving the solution based on the test results and also ask for feedback from others to make it even better.</p>
     </section>
 
     <section id="knowledge-application">
-        <h2>Knowledge Application</h2>
+        <h2> Knowledge Application</h2>
         <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0d97d179722289.5ccbece3c0162.gif" alt="Knowledge Application">
         <p>Applying knowledge from one context to solve problems in another can be highly beneficial. It allows for the transfer of effective strategies and insights, fostering innovative solutions. For instance, techniques learned in data analysis can help in decision-making processes in urban planning. By recognizing patterns and relationships in one field, it becomes easier to identify similar challenges and apply proven methods to address them in a new context, enhancing problem-solving capabilities overall.</p>
     </section>
 
     <section id="pattern-identification">
-        <h2>Strategies for Identifying Patterns</h2>
+        <h2> Strategies for Identifying Patterns</h2>
         <ul>
             <li><strong>Divide and Conquer:</strong> Break down complex problems into smaller, manageable subproblems, solving each one to identify patterns in the overall structure.</li>
             <li><strong>Data Structure Selection:</strong> Choose appropriate data structures (like trees or graphs) that naturally reflect the relationships in the data, aiding in pattern recognition during analysis.</li>
@@ -451,7 +453,7 @@
     </section>
 
     <section id="innovation-stability">
-        <h2>Innovation vs Stability</h2>
+        <h2> Innovation vs Stability</h2>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsR3R3siV_0MDHRtBZxCcRZkTnX3RfdyErdQ&s" alt="Innovation vs Stability">
         <p>When tackling new challenges, innovative approaches may be necessary, but tried-and-tested methods provide stability for well-understood problems. Balancing innovation and stability is crucial in real-world applications.</p>
     </section>
@@ -465,17 +467,17 @@
             </ul>
 
     <section id="balancing-constraints">
-        <h2>Balancing Multiple Conflicting Constraints in a Design</h2>
+        <h2> Balancing Multiple Conflicting Constraints in a Design</h2>
         <p>In a project where I had to design an app for travel planning, I encountered conflicting constraints like user experience (UX) and performance. While I needed the app to be responsive and fast, incorporating complex features like multilingual support and real-time updates could potentially slow down performance. To address this, I prioritized performance optimizations by implementing efficient data structures (such as segment trees for quick range queries) and caching techniques to balance responsiveness with feature richness.</p>
     </section>
 
     <section id="adapting-solution">
-        <h2>Adapting an Existing Solution to Address a New Challenge</h2>
+        <h2> Adapting an Existing Solution to Address a New Challenge</h2>
         <p>When adapting an existing solution to address new challenges, I first analyze the core components of the solution and determine which aspects are flexible and which are rigid. For example, during the development of DarshView, I needed to add real-time user feedback to an already existing heritage information module. The original design focused on passive content delivery, so I updated the backend system to accommodate real-time feedback, allowing the app to handle user interactions without significantly affecting its overall performance.</p>
     </section>
 
     <section id="identifying-patterns">
-        <h2>Strategies for Identifying Patterns in Complex Problems</h2>
+        <h2> Strategies for Identifying Patterns in Complex Problems</h2>
         <p>When dealing with complex datasets or problems, I use several strategies to identify patterns:</p>
         <ul>
             <li><strong>Data Visualizations:</strong> Creating visual representations helps spot trends and anomalies.</li>
@@ -500,8 +502,5 @@
         <p>Applying knowledge from one context to solve problems in another is a powerful strategy. For instance, my experience in data analysis and algorithm design helped me solve the challenge of managing real-time data in my travel app. By applying my knowledge of graph theory, I adapted algorithms designed for static data to efficiently handle real-time updates and user interactions.</p>
     </section>
  </section>
-  <footer>
-        <p>&copy; 2025 Data Analysis and Algorithms. All rights reserved.</p>
-    </footer>
 </body>
 </html>
