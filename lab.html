@@ -71,6 +71,316 @@
                 - First, figure out if your problem involves ordered data or frequent searches—like deciding if you need a grocery list or a scavenger hunt.<br>
                 - Compare BST with other data structures to see which fits best—like choosing the right tool for a job.<br>
                 - Collaborate with others to get new insights—like asking friends to taste-test your dish.
+                bst code
+                #include<iostream>
+#include<cstdlib>
+//#define NULL 0
+using namespace std;
+
+struct tree
+{
+    int data;
+    struct tree*left;
+    struct tree *right;
+};
+typedef struct tree TREE;
+
+
+class binarysearchtree
+{
+public:
+    TREE*insert_into_bst(TREE*,int);
+    void inorder(TREE*);
+    void preorder(TREE*);
+    void postorder(TREE*);
+    int total_nodes(TREE* );
+    void printOutDegreeOfRoot(TREE* root);
+    TREE* delete_from_bst(TREE*, int);
+    TREE* delete_less_than_k(TREE*,int);
+    void minimum(TREE*);
+    void maximum(TREE*);
+    int GreaterThanK(TREE*,int);
+    int LesserThanK(TREE*,int);
+};
+void binarysearchtree::minimum(TREE* root){
+   int Min=root->data;
+   while(root->left!=NULL) root=root->left;
+   Min=root->data;
+   cout<<"Min value is "<<Min<<endl;
+}
+int binarysearchtree::GreaterThanK(TREE* root,int k){
+   int sum=0;
+   if(root==NULL){
+    return 0;
+   }
+   if(root->data==k) return total_nodes(root->right);
+   else if(root->data>k){
+    sum=total_nodes(root->right)+1;
+    sum=sum+GreaterThanK(root->left,k);
+    return sum;
+   }
+   else{
+    return GreaterThanK(root->right,k);
+   }
+}
+
+int binarysearchtree::LesserThanK(TREE* root,int k){
+   int sum=0;
+   if(root==NULL) return 0;
+   if(root->data==k) return total_nodes(root->left);
+   else if(root->data<k){
+    sum=1+total_nodes(root->left);
+    sum=sum+LesserThanK(root->right,k);
+    return sum;
+   }
+   else{
+    return LesserThanK(root->left,k);
+   }
+}
+
+void binarysearchtree::maximum(TREE* root){
+   int Max=root->data;
+   while(root->right!=NULL) root=root->right;
+   Max=root->data;
+   cout<<"Max value is "<<Max<<endl;
+}
+TREE* binarysearchtree::delete_less_than_k(TREE* root,int k){
+   if(root==NULL) return root;
+   root->left=delete_less_than_k(root->left,k);
+   root->right=delete_less_than_k(root->right,k);
+   if(root->data<k){
+    TREE* temp=root->right;
+    root=delete_from_bst(root,root->data);
+   }
+   return root;
+}
+TREE* binarysearchtree::insert_into_bst(TREE* root,int data)
+{
+    TREE* newnode=(TREE*)malloc(sizeof(TREE));
+    if(newnode==NULL)
+    {
+        cout<<"memory allocation failed\n";
+        return root;
+    }
+
+    newnode->data=data;
+    newnode->left=NULL;
+    newnode->right=NULL;
+
+    if(root==NULL)
+    {
+        root=newnode;
+        cout<<"root node inserted into tree\n";
+        return root;
+    }
+
+    TREE*currnode=root;
+    TREE* parent=NULL;
+
+    while(currnode!=NULL)
+    {
+        parent=currnode;
+        if(newnode->data<currnode->data)
+            currnode=currnode->left;
+        else
+            currnode=currnode->right;
+    }
+
+
+    if(newnode->data<parent->data)
+        parent->left=newnode;
+    else
+        parent->right=newnode;
+    cout<<"node inserted successfully into the tree"<<endl;
+    return root;
+}
+
+void binarysearchtree::inorder(TREE* root)
+{
+    if(root!=NULL)
+    {
+        inorder(root->left);
+        cout<<root->data<<"\t";
+        inorder(root->right);
+    }
+}
+
+void binarysearchtree::preorder(TREE* root)
+{
+    if(root!=NULL)
+    {
+        cout<<root->data<<"\t";
+        preorder(root->left);
+        preorder(root->right);
+    }
+}
+
+void binarysearchtree::postorder(TREE* root)
+{
+    if(root!=NULL)
+    {
+        postorder(root->left);
+        postorder(root->right);
+        cout<<root->data<<"\t";
+    }
+}
+
+TREE* binarysearchtree::delete_from_bst(TREE* root,int data)
+{
+    TREE* currnode=root;
+    TREE* parent =NULL;
+    TREE* successor =NULL;
+    TREE* p=NULL;
+
+    if(root==NULL)
+    {
+        cout<<"tree is empty\n";
+        return root;
+    }
+    while(currnode!=NULL&&currnode->data!=data)
+    {
+        parent=currnode;
+        if(data<currnode->data)
+            currnode=currnode->left;
+        else
+            currnode=currnode->right;
+    }
+    if(currnode==NULL)
+    {
+        cout<<"item not found\n";
+        return root;
+    }
+    if(currnode->left==NULL)
+        p=currnode->right;
+    else if(currnode->right==NULL)
+        p=currnode->left;
+    else{
+        successor=currnode->right;
+        while(successor->left!=NULL)
+            successor=successor->left;
+        successor->left=currnode->left;
+        p=currnode->right;
+    }
+
+    if(parent==NULL)
+    {
+        free(currnode);
+        return p;
+    }
+    if(currnode==parent->left)
+        parent->left=p;
+    else
+        parent->right=p;
+     free(currnode);
+    return root;
+}
+int binarysearchtree::total_nodes(TREE* root){
+   if(root==NULL) return 0;
+   return 1+total_nodes(root->left)+total_nodes(root->right);
+}
+void binarysearchtree::printOutDegreeOfRoot(TREE* root){
+   if(root->left==NULL&&root->right==NULL) cout<<"Out degree of root node = 0\n";
+   else if(root->left!=NULL&&root->right!=NULL) cout<<"Out degree of root node = 2\n";
+   else cout<<"Out degree of root node = 1\n";
+}
+
+int main()
+{
+    binarysearchtree bst;
+    TREE* root=NULL;
+    int ch=0,k;
+    int data=0;
+    while(1)
+    {
+        cout<<"\n menu\n";
+        cout<<"1-insert into bst\n";
+        cout<<"2-inorder traversal\n";
+cout<<"3-preorder traversal\n";
+cout<<"4-postorder traversal\n";
+cout<<"5-delete from bst\n";
+cout<<"6-total number of nodes\n";
+cout<<"7-total number of edges\n";
+cout<<"8-outdegree\n";
+cout <<"9-Delete less than k\n";
+cout <<"10-Minimum in the tree\n";
+cout <<"11-Maximum in the tree\n";
+cout <<"12-No. of nodes greater than k\n";
+cout <<"13-No. of nodes lesser than k\n";
+cout<<"enter your choice\n";
+cin>>ch;
+switch(ch)
+{
+    case 1:
+                cout<<"enter the item to insert:";
+                cin>>data;
+                root=bst.insert_into_bst(root,data);
+                break;
+    case 2:
+                if(root==NULL)
+                    cout<<"tree is empty\n";
+                else{
+                    cout<<"inorder traversal is..\n";
+                    bst.inorder(root);
+                }
+                break;
+    case 3:
+                if(root==NULL)
+                    cout<<"tree is empty\n";
+                else{
+                    cout<<"preorder traversal is..\n";
+                    bst.preorder(root);
+                }
+                break;
+    case 4:
+                if(root==NULL)
+                    cout<<"tree is empty\n";
+                else{
+                    cout<<"postorder traversal is..\n";
+                    bst.postorder(root);
+                }
+                break;
+    case 5:
+               cout<<"enter the item to be deleted:";
+               cin>>data;
+               root=bst.delete_from_bst(root,data);
+                break;
+    case 6:
+                cout<<"total number of nodes "<<bst.total_nodes(root)<<endl;break;
+    case 7:
+                cout<<"total edges = "<<bst.total_nodes(root)-1<<endl;break;
+    case 8:
+                 bst.printOutDegreeOfRoot(root);break;
+    case 9:
+                cout<<"enter the value of k\n";
+                 cin>>k;
+                 root=bst.delete_less_than_k(root,k);
+                 cout<<"deleted";
+        break;
+    case 10:
+        bst.minimum(root);
+        break;
+    case 11:
+        bst.maximum(root);
+        break;
+    case 12:
+        cout<<"enter the value of k\n";
+        cin>>k;
+        cout<<"The no. of nodes greater than k = "<<bst.GreaterThanK(root,k);
+        break;
+    case 13:
+        cout<<"enter the value of k\n";
+        cin>>k;
+        cout<<"The no. of nodes lesser than k = "<<bst.LesserThanK(root,k);
+        break;
+    default:
+                cout<<"exiting code\n";
+                exit(0);
+        }
+    }
+    return 0;
+}
+
+
             </p>
             <h2>Algorithmic Concepts</h2>
             <h2>3. DFS and BFS</h2>
