@@ -3,168 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>DAA COURSE PROJECT</title>
+    <title>Course Project Introduction</title>
     <style>
-        .scrollable {
-            width: auto;
-            height: auto;
-            overflow: auto; /* Enables both horizontal and vertical scroll */
+        h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
         }
-        table {
-            width: 80%; /* Adjust the width to give equal space on left and right */
-            margin-left: auto;
-            margin-right: auto;
-            border-collapse: collapse;
-        } 
-        th, td {
-            border: 2px solid blue;
-            padding: 10px;
-            text-align: left;
-            color: white;
-        } 
-        th {
-            background-color: black;
-        } 
-        td {
-            background-color: black;
+        ul, li {
+            font-size: 18px;
+            line-height: 1.8;
         }
     </style>
 </head>
 <body>
-    <div class="scrollable">
-        <nav>
-            <div class="nav-container">
-                <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
-                    <span>DAA</span>
-                </div>
-                <div class="links">
-                    <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html">Home</a></div>
-                    <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="intro.html">Course Project Introduction</a></div>
-                    <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="ps.html">Problem Statement</a></div>
-                    <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="bc.html">Business Cases</a></div>
-                    <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="td.html">Team details</a></div>
-                </div>
-                <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-            </div>
-            <div class="dropdown">
-                <div class="links">
-                    <a href="index.html">Home</a>
-                    <a href="intro.html">Course Project Introduction</a>
-                    <a href="ps.html">Problem Statement</a>
-                    <a href="bc.html">Business Cases</a>
-                    <a href="td.html">Team details</a>
-                    <br><br>
-                    <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-                </div>
-            </div>
-        </nav>
-        <section>
-            <div class="main-container">
-                <div class="content">
-                    <br><br><br><br><br><br>
-                    <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700"><span>BUSINESS CASES</span></h1>
-                    <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">
-                        1. Listing of All Preferences of Users The system allows users to add, update, and display their preferences,
-                        <br>such as favorite destinations or activities, with options for sorting or categorizing them.<br><br>
+    <section class="home">
+        <div class="home-content">
+            <a href="theory.html" class="btn">THEORY</a>
+            <a href="Reflections.html" class="btn">LAB</a>
+            <h2><span>Course Project Introduction</span></h2><br>
+            
+            <p>
+                This project addresses challenges in travel management by focusing on user-centric solutions. It leverages efficient algorithms 
+                for preference handling, recommendation systems, and sustainable travel. The findings have helped shape innovative business cases for better user experiences.
+            </p>
+            
+            <h3>Problem Definition and Team Details</h3>
+            <p>
+                The project focuses on solving key issues in travel planning, such as preference sorting, personalized recommendations, sustainable transport options, 
+                and emergency services. The team roles and contributions are outlined below:
+            </p>
+            <ul>
+                <li><strong>MISHTY</strong> - Responsible for listing user preferences and implementing efficient sorting mechanisms using Array and Bubble Sort.</li>
+                <li><strong>BHAGYASHRI</strong> - Develops ranking-based sorting for attractions and manages transport scheduling using Bubble Sort and Insertion Sort.</li>
+                <li><strong>DIYA</strong> - Works on carpooling solutions and shop categorization using Disjoint Set Union and Switch Cases.</li>
+                <li><strong>ANANYA</strong> - Handles tourist package sorting and transport mode selection using Selection Sort and Switch Cases.</li>
+            </ul>
 
-                        2. Tourist Package Users can view and sort tourist packages based on price, allowing them to select options within their budget.<br><br>
-
-                        3. Tourist Attraction
-                        The system displays tourist attractions and sorts them based on their rank or popularity, helping users prioritize top-ranked attractions.<br><br>
-
-                        4. Transportation Mode
-                        The system shows available transportation modes (e.g., car, bus, train) for traveling outside the city, offering the option to choose the most suitable one.<br><br>
-
-                        5. Listing All the Carpooling Options
-                        The system matches users with potential carpool partners based on similar travel routes, facilitating shared transportation.<br><br>
-
-                        6. Listing the Timings (Arrival/Departure)
-                        The system sorts transport timings (e.g., buses, trains, flights) based on arrival or departure times, making it easier for users to plan their trips.<br><br>
-
-                        7. Shop Local
-                        The system displays local shops, sorted alphabetically or by category, promoting local culture and encouraging users to shop locally.<br><br>
-
-                        8. Emergency Help
-                        The system provides a list of nearby emergency services (e.g., hospitals, police stations) based on the user's current location for quick assistance in emergencies.<br><br>
-                    </p><br><br>
-                </div>
-            </div>
-        </section>
-        <br><br><br>
-        <table>
-            <tr>
-                <br><br>
-                <th>sno</th>
-                <th>BUSINESS CASE IDENTIFICATION</th>
-                <th>DESCRIPTION</th>
-                <th>OWNER</th>
-                <th>PROBABLE TOOLS</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Listing of all preferences of users<br>Sorting by preference</td>
-                <td>Display and insertion of preferences<br>Listing according to activities chosen</td>
-                <td>MISHTY</td>
-                <td>Array</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Tourist package</td>
-                <td>sorting on the bases of price chosen</td>
-                <td>ANANYA</td>
-                <td>Selection sort</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Tourist attraction</td>
-                <td>sorting on the bases of rank chosen</td>
-                <td>BHAGYASHRI</td>
-                <td>Bubble sort</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Transportation mode</td>
-                <td>travelling modes to go outside of city</td>
-                <td>ANANYA</td>
-                <td>Display by switch</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Listing all the carpooling options</td>
-                <td>finding carpool partners if route is same</td>
-                <td>DIYA</td>
-                <td>Disjoint set-union</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Listing the timings (arrival/ departure)</td>
-                <td>Sort transport timings for arrival and departure, e.g., earliest to latest.</td>
-                <td>BHAGYASHRI</td>
-                <td>Insertion Sort</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Shop local</td>
-                <td>Sort shops alphabetically or by category to promote culture</td>
-                <td>DIYA</td>
-                <td>Displaying by switch</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Emergency help</td>
-                <td>List of emergency services (hospitals, police stations)</td>
-                <td>MISHTY</td>
-                <td>Displaying by switch</td>
-            </tr>
-        </table>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init({offset:0});
-        </script>
-        <script src="script.js"></script>
-    </div>
+            <h3>Business Cases</h3>
+            <ul>
+                <li><strong>Listing Preferences:</strong> Enables users to add and update their preferences for destinations or activities (MISHTY - Array).</li>
+                <li><strong>Tourist Packages:</strong> Allows sorting of travel packages based on price (ANANYA - Selection Sort).</li>
+                <li><strong>Tourist Attractions:</strong> Displays attractions sorted by rank or popularity (BHAGYASHRI - Bubble Sort).</li>
+                <li><strong>Transportation Modes:</strong> Helps users select suitable modes for inter-city travel (ANANYA - Switch Case).</li>
+                <li><strong>Carpooling Options:</strong> Matches users with potential carpool partners for shared travel (DIYA - Disjoint Set Union).</li>
+                <li><strong>Transport Timings:</strong> Sorts transport schedules for easier trip planning (BHAGYASHRI - Insertion Sort).</li>
+                <li><strong>Shop Local:</strong> Promotes local shopping with category-based sorting (DIYA - Switch Case).</li>
+                <li><strong>Emergency Services:</strong> Provides quick access to emergency contacts like hospitals and police (MISHTY - Switch Case).</li>
+            </ul>
+        </div>
+    </section>
+    <a href="theory.html" class="btn">HOME</a>
+    <a href="ci.html" class="btn">COURSE PROJECT INTRODUCTION</a>
+    <a href="lp.html" class="btn">COURSE LEARNING REFLECTIONS</a>
 </body>
 </html>
